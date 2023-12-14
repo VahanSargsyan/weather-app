@@ -1,0 +1,38 @@
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  width: 120px;
+  height: 48px;
+  padding: 4px;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.unit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #9A9895;
+
+  cursor: pointer;
+}
+
+.active {
+  flex: 4;
+
+  font-size: 48px;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 8px;
+  background-color: #9A9895;
+  color: #fff;
+  text-align: center;
+  padding-top: 12px;
+
+  transition: all 0.5s;
+}
