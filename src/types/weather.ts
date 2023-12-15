@@ -7,3 +7,15 @@ export interface IWeather {
   condition: string;
   icon: string;
 }
+
+interface IForecastDay {
+  date: string;
+  minTemperature: number;
+  MaxTemperature: number;
+  condition: string;
+  icon: string;
+}
+
+export interface IForecast {
+  forecast: IForecastDay[];
+}

@@ -1,3 +1,9 @@
+interface ICondition {
+  text: string;
+  icon: string;
+  code: number;
+}
+
 export interface IWeatherResponse {
   location: {
     name: string;
@@ -15,11 +21,7 @@ export interface IWeatherResponse {
     temp_c: number;
     temp_f: number;
     is_day: number;
-    condition: {
-      text: string;
-      icon: string;
-      code: number;
-    };
+    condition: ICondition;
     wind_mph: number;
     wind_kph: number;
     wind_degree: number;
@@ -37,5 +39,46 @@ export interface IWeatherResponse {
     uv: number;
     gust_mph: number;
     gust_kph: number;
+  };
+  error?: {
+    code: number;
+    message: string;
+  };
+}
+
+export interface IForecastDay {
+  date: string;
+  date_epoch: number;
+  day: {
+    maxtemp_c: number;
+    maxtemp_f: number;
+    mintemp_c: number;
+    mintemp_f: number;
+    avgtemp_c: number;
+    avgtemp_f: number;
+    maxwind_mph: number;
+    maxwind_kph: number;
+    totalprecip_mm: number;
+    totalprecip_in: number;
+    totalsnow_cm: number;
+    avgvis_km: number;
+    avgvis_miles: number;
+    avghumidity: number;
+    daily_will_it_rain: number;
+    daily_chance_of_rain: number;
+    daily_will_it_snow: number;
+    daily_chance_of_snow: number;
+    condition: ICondition;
+    uv: number;
+  };
+}
+
+export interface IForecastResponse extends IWeatherResponse {
+  forecast: {
+    forecastday: IForecastDay[];
+  };
+  error?: {
+    code: number;
+    message: string;
   };
 }

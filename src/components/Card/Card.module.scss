@@ -1,9 +1,33 @@
 .card {
+  display: flex;
   min-width: 300px;
+  max-width: 900px;
   min-height: 100px;
+  padding: 24px;
+  background-color: #0001;
+  backdrop-filter: blur(10px);
+}
 
-  border: 1px solid #9A9895;
-  border-radius: 8px;
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-  box-shadow: aliceblue;
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .temperature {
+    font-size: 48px;
+    font-weight: bold;
+    color: bisque;
+  }
+}
+
+.secondaryContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
 }

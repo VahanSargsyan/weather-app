@@ -9,28 +9,24 @@ const Card: FC = () => {
   if (!weatherInfo) return null;
   return (
     <div className={styles.card}>
-      <div className={styles.cardHeader}>
-        <h2>{weatherInfo?.city}</h2>
-        <h3>{weatherInfo?.temperature}°</h3>
-        <img src={`https:${weatherInfo.icon}`} alt="" />
+      <div className={styles.mainContent}>
+        <img className={styles.icon} src={`https:${weatherInfo.icon}`} alt="" />
+
+        <div>
+          <h5>Feels like</h5>
+          <h6>{weatherInfo?.feelsLike}°</h6>
+        </div>
       </div>
-      <div className={styles.cardBody}>
-        <div className={styles.cardBodyItem}>
-          <h4>Feels like</h4>
-          <h5>{weatherInfo?.feelsLike}°</h5>
+      <div className={styles.secondaryContent}>
+        <div>
+          <h1 className={styles.temperature}>{weatherInfo?.temperature}°</h1>
+          <h3>{weatherInfo?.city}</h3>
         </div>
+
         <div className={styles.cardBodyItem}>
-          <h4>Humidity</h4>
-          <h5>{weatherInfo?.humidity}%</h5>
+          <h5>Humidity</h5>
+          <h6>{weatherInfo?.humidity}%</h6>
         </div>
-        {/*<div className={styles.cardBodyItem}>*/}
-        {/*  <h4>Pressure</h4>*/}
-        {/*  <h5>{weatherInfo?.main.pressure} hPa</h5>*/}
-        {/*</div>*/}
-        {/*<div className={styles.cardBodyItem}>*/}
-        {/*  <h4>Wind</h4>*/}
-        {/*  <h5>{weatherInfo?.wind.speed} m/s</h5>*/}
-        {/*</div>*/}
       </div>
     </div>
   );
